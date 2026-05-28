@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Sora:wght@300;400;600;700;800&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:#04080f;}
+::-webkit-scrollbar-thumb{background:#00e5ff33;border-radius:4px;}
+
+html,body{
+  background:#04080f;
+  color:#c8d0e0;
+  font-family:'Space Mono',monospace;
+  overflow-x:hidden;
+  margin: 0;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes floatA{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes floatB{0%,100%{transform:translateY(0) translateX(0)}50%{transform:translateY(-8px) translateX(5px)}}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.12);opacity:1}}
+@keyframes scanH{0%{transform:translateX(-100%)}100%{transform:translateX(500%)}}
+@keyframes glowT{0%,100%{filter:brightness(1)}50%{filter:brightness(1.4)}}
