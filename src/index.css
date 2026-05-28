@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Sora:wght@300;400;600;700;800&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -10,7 +11,6 @@ html,body{
   background:#04080f;
   color:#c8d0e0;
   font-family:'Space Mono',monospace;
-  overflow-x:hidden;
   margin: 0;
   scroll-behavior: smooth;
 }

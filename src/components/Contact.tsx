@@ -1,5 +1,6 @@
 import React from 'react';
 import Reveal from './Reveal';
+import { contactData } from '../data/contact';
 
 const Contact: React.FC = () => {
   return (
@@ -13,23 +14,23 @@ const Contact: React.FC = () => {
         </Reveal>
         
         <Reveal delay={0.2}>
-          <p style={{ fontFamily: "'Sora',sans-serif", color: '#6677aa', fontSize: '15px', lineHeight: 1.9, marginBottom: '48px' }}>Looking for a frontend developer who delivers pixel-perfect, high-performance UIs? Open to exciting full-time roles and collaborations.</p>
+          <p style={{ fontFamily: "'Sora',sans-serif", color: 'var(--text-dim)', fontSize: '15px', lineHeight: 1.9, marginBottom: '48px' }}>{contactData.description}</p>
         </Reveal>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', marginBottom: '48px' }}>
           <Reveal delay={0.3}>
-            <a href="mailto:santhoshkarthisk005@gmail.com" className="cl"><span style={{ color: '#00e5ff', fontSize: '20px', lineHeight: 1 }}>✉</span> santhoshkarthisk005@gmail.com</a>
+            <a href={`mailto:${contactData.email}`} className="cl"><span style={{ color: 'var(--accent)', fontSize: '20px', lineHeight: 1 }}>✉</span> {contactData.email}</a>
           </Reveal>
           <Reveal delay={0.4}>
-            <div className="cl"><span style={{ color: '#00e5ff', fontSize: '20px', lineHeight: 1 }}>☎</span> +91 9092314029</div>
+            <div className="cl"><span style={{ color: 'var(--accent)', fontSize: '20px', lineHeight: 1 }}>☎</span> {contactData.phone}</div>
           </Reveal>
           <Reveal delay={0.5}>
-            <div className="cl"><span style={{ color: '#00e5ff', fontSize: '20px', lineHeight: 1 }}>◎</span> Tiruppur, Tamil Nadu, India</div>
+            <div className="cl"><span style={{ color: 'var(--accent)', fontSize: '20px', lineHeight: 1 }}>◎</span> {contactData.location}</div>
           </Reveal>
         </div>
         
         <Reveal delay={0.6}>
-          <a href="mailto:santhoshkarthisk005@gmail.com" className="btn-s">SEND A MESSAGE →</a>
+          <a href={`mailto:${contactData.email}`} className="btn-s">SEND A MESSAGE →</a>
         </Reveal>
       </div>
     </section>
