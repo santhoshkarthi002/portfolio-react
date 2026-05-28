@@ -1,31 +1,49 @@
-.nav-link{color:#778899;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1px;cursor:pointer;transition:color .3s;background:none;border:none;padding:0;}
+.nav-link{color:#778899;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1px;cursor:pointer;transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);background:none;border:none;padding:0;position:relative;}
+.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:#00e5ff;transition:width .3s;}
 .nav-link:hover{color:#00e5ff;}
+.nav-link:hover::after{width:100%;}
 
-.skill-card{background:#060d1a;border:1px solid #00e5ff22;border-radius:12px;padding:24px;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.skill-card{background:#060d1a;border:1px solid #00e5ff22;border-radius:12px;padding:24px;transition:all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);position:relative;overflow:hidden;}
 .skill-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#00e5ff09 0%,transparent 60%);pointer-events:none;}
-.skill-card:hover{border-color:#00e5ff55;transform:translateY(-5px);box-shadow:0 10px 32px #00e5ff18;}
+.skill-card:hover{border-color:#00e5ff55;transform:translateY(-8px) scale(1.02);box-shadow:0 15px 40px #00e5ff12;}
 
 .tag{display:inline-block;background:#00e5ff0d;border:1px solid #00e5ff28;color:#00d4ee;border-radius:6px;padding:3px 10px;font-size:11.5px;font-family:'Space Mono',monospace;margin:3px;transition:all .25s;}
-.tag:hover{background:#00e5ff1e;border-color:#00e5ff66;color:#00e5ff;transform:translateY(-1px);}
-.tag-g{display:inline-block;background:#00ff9f0d;border:1px solid #00ff9f28;color:#00dd88;border-radius:6px;padding:3px 10px;font-size:11.5px;font-family:'Space Mono',monospace;margin:3px;transition:all .25s;}
-.tag-g:hover{background:#00ff9f1e;}
+.tag:hover{background:#00e5ff;border-color:#00e5ff;color:#04080f;transform:translateY(-2px);box-shadow:0 4px 12px #00e5ff44;}
 
-.tl-card{background:#060d1a;border:1px solid #00e5ff18;border-left:3px solid #00e5ff;border-radius:0 12px 12px 0;padding:28px 28px 22px;flex:1;transition:border-color .3s,transform .3s;}
-.tl-card:hover{border-color:#00e5ff44;border-left-color:#00ff9f;transform:translateX(5px);}
+.tag-g{display:inline-block;background:#00ff9f0d;border:1px solid #00ff9f28;color:#00dd88;border-radius:6px;padding:3px 10px;font-size:11.5px;font-family:'Space Mono',monospace;margin:3px;transition:all .25s;}
+.tag-g:hover{background:#00ff9f;border-color:#00ff9f;color:#04080f;transform:translateY(-2px);box-shadow:0 4px 12px #00ff9f44;}
+
+.tl-card{background:#060d1a;border:1px solid #00e5ff18;border-left:3px solid #00e5ff;border-radius:0 12px 12px 0;padding:28px 28px 22px;flex:1;transition:all .4s cubic-bezier(0.4, 0, 0.2, 1);}
+.tl-card:hover{border-color:#00e5ff44;border-left-color:#00ff9f;transform:translateX(8px);background:#081225;}
 .tl-card.cur{border-left-color:#00ff9f;}
 
-.btn{background:transparent;border:1px solid #00e5ff;color:#00e5ff;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;padding:12px 26px;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;}
-.btn:hover{background:#00e5ff18;box-shadow:0 0 28px #00e5ff28;}
-.btn-s{background:#00e5ff;border:1px solid #00e5ff;color:#04080f;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;padding:12px 26px;cursor:pointer;font-weight:700;transition:all .3s;text-decoration:none;display:inline-block;}
-.btn-s:hover{background:#00ff9f;border-color:#00ff9f;box-shadow:0 0 32px #00ff9f35;}
+.btn{background:transparent;border:1px solid #00e5ff;color:#00e5ff;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;padding:12px 26px;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,229,255,0.2),transparent);transition:left .5s;}
+.btn:hover::before{left:100%;}
+.btn:hover{background:#00e5ff18;box-shadow:0 0 28px #00e5ff28;transform:translateY(-2px);}
 
-.cl{color:#6677aa;font-family:'Space Mono',monospace;font-size:13px;transition:color .3s;display:flex;align-items:center;gap:12px;text-decoration:none;}
-.cl:hover{color:#00e5ff;}
+.btn-s{background:#00e5ff;border:1px solid #00e5ff;color:#04080f;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:1.5px;padding:12px 26px;cursor:pointer;font-weight:700;transition:all .3s;text-decoration:none;display:inline-block;position:relative;overflow:hidden;}
+.btn-s::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);transition:left .5s;}
+.btn-s:hover::before{left:100%;}
+.btn-s:hover{background:#00ff9f;border-color:#00ff9f;box-shadow:0 0 32px #00ff9f35;transform:translateY(-2px);}
+
+.cl{color:#6677aa;font-family:'Space Mono',monospace;font-size:13px;transition:all .3s;display:flex;align-items:center;gap:12px;text-decoration:none;}
+.cl:hover{color:#00e5ff;transform:translateX(5px);}
 
 .grid-bg{position:absolute;inset:0;background-image:linear-gradient(#00e5ff07 1px,transparent 1px),linear-gradient(90deg,#00e5ff07 1px,transparent 1px);background-size:44px 44px;pointer-events:none;}
 .scan{position:absolute;top:0;left:0;width:20%;height:100%;background:linear-gradient(90deg,transparent,#00e5ff08,transparent);animation:scanH 7s linear infinite;pointer-events:none;}
 .slab{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:4px;color:#00e5ff;margin-bottom:10px;}
 .sh{font-family:'Sora',sans-serif;font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:10px;}
-.line{width:64px;height:2px;background:linear-gradient(to right,#00e5ff,#00ff9f);margin-bottom:52px;}
-.sec{padding:88px 8%;position:relative;}
-.sec-dark{padding:80px 8%;background:#030810;position:relative;}
+.line{width:64px;height:2px;background:linear-gradient(to right,#00e5ff,#00ff9f);margin-bottom:52px;transition:width .6s cubic-bezier(0.17, 0.55, 0.55, 1);}
+
+.sec:hover .line{width:120px;}
+
+.sec{padding:88px 8%;position:relative;scroll-margin-top:80px;}
+.sec-dark{padding:80px 8%;background:#030810;position:relative;scroll-margin-top:80px;}
+
+/* New classes for animations */
+.reveal-up{animation:fadeUp .8s cubic-bezier(0.17, 0.55, 0.55, 1) both;}
+.stagger-1{animation-delay:.1s;}
+.stagger-2{animation-delay:.2s;}
+.stagger-3{animation-delay:.3s;}
+.stagger-4{animation-delay:.4s;}

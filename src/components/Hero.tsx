@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import Reveal from './Reveal';
 
 interface HeroProps {
   onScroll: (id: string) => void;
@@ -41,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ onScroll }) => {
       }
     }
 
-    timeoutId = setTimeout(typeWrite, 600);
+    timeoutId = setTimeout(typeWrite, 1200); // Delayed start for hero animation
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -180,30 +181,47 @@ const Hero: React.FC<HeroProps> = ({ onScroll }) => {
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 55% 50%,transparent 25%,#04080f 75%)', pointerEvents: 'none', zIndex: 1 }}></div>
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '220px', background: 'linear-gradient(to bottom,transparent,#04080f)', pointerEvents: 'none', zIndex: 1 }}></div>
 
-      <div style={{ position: 'relative', zIndex: 2, maxWidth: '680px', animation: 'fadeUp .9s ease both' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '22px' }}>
-          <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#00ff9f', display: 'inline-block', animation: 'pulse 1.8s ease-in-out infinite' }}></span>
-          <span style={{ fontFamily: "'Space Mono',monospace", color: '#00ff9f', fontSize: '11px', letterSpacing: '4px' }}>AVAILABLE FOR OPPORTUNITIES</span>
-        </div>
-        <div style={{ fontFamily: "'Space Mono',monospace", color: '#445566', fontSize: '13px', marginBottom: '12px', fontStyle: 'italic' }}>// Frontend Developer · Tiruppur, Tamil Nadu</div>
-        <h1 style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: 'clamp(3rem,8vw,6rem)', color: '#fff', lineHeight: 1.05, letterSpacing: '-2px', marginBottom: '4px' }}>Karthikeyan</h1>
-        <h1 style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: 'clamp(3rem,8vw,6rem)', color: '#00e5ff', lineHeight: 1.05, letterSpacing: '-2px', marginBottom: '24px', animation: 'glowT 3s ease-in-out infinite' }}>G</h1>
-        <div style={{ height: '44px', display: 'flex', alignItems: 'center', marginBottom: '24px' }}>
-          <span id="typed" ref={typedRef} style={{ fontFamily: "'Space Mono',monospace", fontSize: 'clamp(.9rem,2.2vw,1.2rem)', color: '#00ff9f' }}></span>
-          <span style={{ animation: 'blink 1s step-end infinite', color: '#00e5ff', marginLeft: '2px' }}>▊</span>
-        </div>
-        <p style={{ fontFamily: "'Sora',sans-serif", color: '#6677aa', fontSize: '15px', lineHeight: 1.9, maxWidth: '500px', marginBottom: '40px' }}>
-          3+ years crafting high-performance web interfaces with React.js &amp; SolidJS. Turning complex requirements into elegant, pixel-perfect experiences.
-        </p>
-        <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '52px' }}>
-          <a href="mailto:santhoshkarthisk005@gmail.com" className="btn-s">GET IN TOUCH</a>
-          <button className="btn" onClick={() => onScroll('experience')}>VIEW EXPERIENCE ↓</button>
-        </div>
-        <div style={{ display: 'flex', gap: '44px', paddingTop: '28px', borderTop: '1px solid #00e5ff15' }}>
-          <div><div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: '2.2rem', color: '#00e5ff', lineHeight: 1 }}>3+</div><div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', color: '#445566', letterSpacing: '1px', marginTop: '6px' }}>YEARS EXP</div></div>
-          <div><div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: '2.2rem', color: '#00e5ff', lineHeight: 1 }}>6+</div><div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', color: '#445566', letterSpacing: '1px', marginTop: '6px' }}>TECH STACKS</div></div>
-          <div><div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: '2.2rem', color: '#00e5ff', lineHeight: 1 }}>4</div><div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', color: '#445566', letterSpacing: '1px', marginTop: '6px' }}>COMPANIES</div></div>
-        </div>
+      <div style={{ position: 'relative', zIndex: 2, maxWidth: '680px' }}>
+        <Reveal delay={0.2}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '22px' }}>
+            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#00ff9f', display: 'inline-block', animation: 'pulse 1.8s ease-in-out infinite' }}></span>
+            <span style={{ fontFamily: "'Space Mono',monospace", color: '#00ff9f', fontSize: '11px', letterSpacing: '4px' }}>AVAILABLE FOR OPPORTUNITIES</span>
+          </div>
+        </Reveal>
+        
+        <Reveal delay={0.4}>
+          <div style={{ fontFamily: "'Space Mono',monospace", color: '#445566', fontSize: '13px', marginBottom: '12px', fontStyle: 'italic' }}>// Frontend Developer · Tiruppur, Tamil Nadu</div>
+          <h1 style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: 'clamp(3rem,8vw,6rem)', color: '#fff', lineHeight: 1.05, letterSpacing: '-2px', marginBottom: '4px' }}>Karthikeyan</h1>
+          <h1 style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: 'clamp(3rem,8vw,6rem)', color: '#00e5ff', lineHeight: 1.05, letterSpacing: '-2px', marginBottom: '24px', animation: 'glowT 3s ease-in-out infinite' }}>G</h1>
+        </Reveal>
+
+        <Reveal delay={0.6}>
+          <div style={{ height: '44px', display: 'flex', alignItems: 'center', marginBottom: '24px' }}>
+            <span id="typed" ref={typedRef} style={{ fontFamily: "'Space Mono',monospace", fontSize: 'clamp(.9rem,2.2vw,1.2rem)', color: '#00ff9f' }}></span>
+            <span style={{ animation: 'blink 1s step-end infinite', color: '#00e5ff', marginLeft: '2px' }}>▊</span>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.8}>
+          <p style={{ fontFamily: "'Sora',sans-serif", color: '#6677aa', fontSize: '15px', lineHeight: 1.9, maxWidth: '500px', marginBottom: '40px' }}>
+            3+ years crafting high-performance web interfaces with React.js &amp; SolidJS. Turning complex requirements into elegant, pixel-perfect experiences.
+          </p>
+        </Reveal>
+
+        <Reveal delay={1.0}>
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '52px' }}>
+            <a href="mailto:santhoshkarthisk005@gmail.com" className="btn-s">GET IN TOUCH</a>
+            <button className="btn" onClick={() => onScroll('experience')}>VIEW EXPERIENCE ↓</button>
+          </div>
+        </Reveal>
+
+        <Reveal delay={1.2}>
+          <div style={{ display: 'flex', gap: '44px', paddingTop: '28px', borderTop: '1px solid #00e5ff15' }}>
+            <div><div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: '2.2rem', color: '#00e5ff', lineHeight: 1 }}>3+</div><div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', color: '#445566', letterSpacing: '1px', marginTop: '6px' }}>YEARS EXP</div></div>
+            <div><div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: '2.2rem', color: '#00e5ff', lineHeight: 1 }}>6+</div><div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', color: '#445566', letterSpacing: '1px', marginTop: '6px' }}>TECH STACKS</div></div>
+            <div><div style={{ fontFamily: "'Sora',sans-serif", fontWeight: 800, fontSize: '2.2rem', color: '#00e5ff', lineHeight: 1 }}>4</div><div style={{ fontFamily: "'Space Mono',monospace", fontSize: '10px', color: '#445566', letterSpacing: '1px', marginTop: '6px' }}>COMPANIES</div></div>
+          </div>
+        </Reveal>
       </div>
 
       {/* Floating tags */}
