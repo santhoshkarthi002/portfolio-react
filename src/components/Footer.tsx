@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { heroData } from '../data/hero';
 
 const Footer: React.FC = () => {
