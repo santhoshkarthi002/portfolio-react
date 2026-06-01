@@ -36,7 +36,6 @@ const Reveal: React.FC<RevealProps> = ({ children, width = 'fit-content', height
         position: 'relative',
         width,
         height,
-        overflow: 'hidden',
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0) scale(1) rotate(0deg)' : 'translateY(50px) scale(0.95) rotate(1deg)',
         transition: `all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}s`,
