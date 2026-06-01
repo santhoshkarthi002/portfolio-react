@@ -17,13 +17,18 @@ const Contact: React.FC = () => {
           <p style={{ fontFamily: "'Sora',sans-serif", color: 'var(--text-dim)', fontSize: '15px', lineHeight: 1.9, marginBottom: '48px' }}>{contactData.description}</p>
         </Reveal>
         
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '22px', marginBottom: '48px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '48px' }}>
           <Reveal delay={0.3}>
             <a href={`mailto:${contactData.email}`} className="cl"><span style={{ color: 'var(--accent)', fontSize: '20px', lineHeight: 1 }}>✉</span> {contactData.email}</a>
           </Reveal>
           <Reveal delay={0.4}>
-            <div className="cl"><span style={{ color: 'var(--accent)', fontSize: '20px', lineHeight: 1 }}>☎</span> {contactData.phone}</div>
+            <div className="cl"><span style={{ color: 'var(--accent)', fontSize: '20px', lineHeight: 1 }}>☎</span> {contactData.phone} <span style={{ fontSize: '12px', color: 'var(--text-dim)' }}>(Primary)</span></div>
           </Reveal>
+          {contactData.phoneSecondary && (
+            <Reveal delay={0.45}>
+              <div className="cl"><span style={{ color: 'var(--accent)', fontSize: '20px', lineHeight: 1 }}>☎</span> {contactData.phoneSecondary}</div>
+            </Reveal>
+          )}
           <Reveal delay={0.5}>
             <div className="cl"><span style={{ color: 'var(--accent)', fontSize: '20px', lineHeight: 1 }}>◎</span> {contactData.location}</div>
           </Reveal>

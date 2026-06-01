@@ -8,12 +8,12 @@ export const technicalSkills: SkillCategory[] = [
   {
     id: "01",
     title: "Frameworks & Libraries",
-    skills: ["React JS", "SolidJS", "Next JS", "React Hook Form"],
+    skills: ["React JS", "SolidJS", "Next JS", "React Hook Form", "React Router"],
   },
   {
     id: "02",
     title: "UI & Styling",
-    skills: ["HTML5", "CSS3", "Material UI", "Tailwind CSS", "Bootstrap"],
+    skills: ["HTML5", "CSS3", "Material UI", "Tailwind CSS", "Bootstrap", "Framer Motion"],
   },
   {
     id: "03",
@@ -23,15 +23,20 @@ export const technicalSkills: SkillCategory[] = [
   {
     id: "04",
     title: "State & Data",
-    skills: ["Redux Toolkit", "React Query", "REST APIs"],
+    skills: ["Redux Toolkit", "React Query", "Zustand", "REST APIs"],
   },
   {
     id: "05",
+    title: "Forms & Validation",
+    skills: ["Formik", "Yup", "Zod"],
+  },
+  {
+    id: "06",
     title: "Data Visualization",
     skills: ["Apache ECharts", "Recharts"],
   },
   {
-    id: "06",
+    id: "07",
     title: "Dev Tools",
     skills: ["Git", "GitHub", "GitLab", "VS Code", "Chrome DevTools"],
   },
